@@ -1,20 +1,23 @@
-import { getBoard, getLoad, getMemory, getWifi, getWAN } from "./openwrt.service.js";
+export interface DashboardData {
+  cpu: number;
+  memory: number;
+  docker: number;
+  uptime: string;
+  router: string;
+  network: string;
+  adguard: string;
+  wanIp: string;
+}
 
-export async function getDashboard() {
-  const [board, load, memory, wifi, wan] = await Promise.all([
-    getBoard(),
-    getLoad(),
-    getMemory(),
-    getWifi(),
-    getWAN(),
-  ]);
-
+export async function getDashboardData(): Promise<DashboardData> {
   return {
-    system: board,
-    load,
-    memory,
-    wifi,
-    wan,
-    generatedAt: new Date().toISOString(),
+    cpu: 12,
+    memory: 46,
+    docker: 5,
+    uptime: "3 days",
+    router: "Online",
+    network: "Connected",
+    adguard: "Running",
+    wanIp: "192.168.1.1",
   };
 }

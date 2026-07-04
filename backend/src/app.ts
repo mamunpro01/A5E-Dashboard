@@ -18,6 +18,6 @@ app.use(
   morgan(":method :url :status :response-time ms")
 );
 
-app.use(routes);
+app.use("/api", routes);
 
 export default app;
