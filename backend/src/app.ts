@@ -18,6 +18,13 @@ app.use(
   morgan(":method :url :status :response-time ms")
 );
 
+app.get("/", (_req, res) => {
+  res.json({
+    app: "A5E Dashboard API",
+    version: "0.1.0",
+    status: "running",
+  });
+});
 app.use("/api", routes);
 
 export default app;

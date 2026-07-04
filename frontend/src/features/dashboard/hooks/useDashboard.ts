@@ -1,10 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import { getDashboard } from "@/lib/api/dashboard";
+import { fetchDashboard } from "../services/dashboard.api";
 
 export function useDashboard() {
   return useQuery({
     queryKey: ["dashboard"],
-    queryFn: getDashboard,
+    queryFn: fetchDashboard,
     refetchInterval: 5000,
+    staleTime: 4000,
+    retry: 3,
   });
 }

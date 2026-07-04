@@ -8,6 +8,10 @@ export const config = {
 
   port: Number(process.env.PORT ?? 8090),
 
+  provider: {
+    system: process.env.SYSTEM_PROVIDER ?? "mock",
+  },
+
   openwrt: {
     url: process.env.OPENWRT_URL ?? "",
     username: process.env.OPENWRT_USERNAME ?? "",
