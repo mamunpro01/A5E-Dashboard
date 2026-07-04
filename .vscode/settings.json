@@ -1,0 +1,32 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+
+  "files.autoSave": "afterDelay",
+
+  "typescript.tsdk": "node_modules/typescript/lib",
+
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
+
+  "tailwindCSS.experimental.classRegex": [
+    "cn\\(([^)]*)\\)"
+  ],
+
+  "editor.inlineSuggest.enabled": true,
+
+  "editor.minimap.enabled": false,
+
+  "git.autofetch": true,
+
+  "terminal.integrated.defaultProfile.linux": "bash"
+}

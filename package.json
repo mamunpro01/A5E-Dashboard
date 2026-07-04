@@ -1,0 +1,19 @@
+{
+  "name": "a5e-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=@a5e/backend",
+    "frontend": "npm run dev --workspace=@a5e/frontend",
+    "backend": "npm run dev --workspace=@a5e/backend",
+    "build": "npm run build --workspaces",
+    "lint": "npm run lint --workspaces"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
