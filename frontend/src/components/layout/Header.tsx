@@ -1,19 +1,14 @@
-import { Bell, Search } from "lucide-react";
-
 export default function Header() {
   return (
-    <header className="h-14 flex items-center justify-between px-4 border-b border-slate-800 bg-slate-950">
-      <div className="flex items-center gap-2 text-slate-300">
-        <Search size={18} />
-        <input
-          placeholder="Search devices, metrics..."
-          className="bg-transparent outline-none text-sm"
-        />
-      </div>
+    <header className="flex h-16 items-center justify-between border-b border-slate-800 bg-slate-900 px-8">
+      <h1 className="text-xl font-semibold text-white">
+        A5E Dashboard
+      </h1>
 
-      <div className="flex items-center gap-4 text-slate-300">
-        <Bell size={18} />
-        <div className="w-8 h-8 rounded-full bg-slate-700" />
+      <div className="flex items-center gap-4">
+        <button>🔔</button>
+        <button>🌙</button>
+        <button>👤</button>
       </div>
     </header>
   );

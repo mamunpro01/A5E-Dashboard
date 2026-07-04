@@ -1,37 +1,41 @@
 import { NavLink } from "react-router-dom";
-import { navigation } from "@/shared/constants/navigation";
-import { cn } from "@/shared/utils/cn";
+
+const menus = [
+  { name: "Dashboard", path: "/" },
+  { name: "Network", path: "/network" },
+  { name: "Devices", path: "/devices" },
+  { name: "Docker", path: "/docker" },
+  { name: "AdGuard", path: "/adguard" },
+  { name: "Logs", path: "/logs" },
+  { name: "Settings", path: "/settings" },
+];
 
 export default function Sidebar() {
   return (
-    <aside className="h-screen w-64 bg-slate-900 border-r border-slate-800 hidden md:flex flex-col">
-      <div className="p-4 text-xl font-bold text-white">
+    <div className="h-full bg-slate-900 p-4">
+      <h2 className="mb-6 text-xl font-bold text-white">
         A5E Dashboard
-      </div>
+      </h2>
 
-      <nav className="flex-1 px-2 space-y-1">
-        {navigation.map((item) => {
-          const Icon = item.icon;
-
-          return (
-            <NavLink
-              key={item.href}
-              to={item.href}
-              className={({ isActive }) =>
-                cn(
-                  "flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition",
+      <nav>
+        <ul className="space-y-2">
+          {menus.map((menu) => (
+            <li key={menu.path}>
+              <NavLink
+                to={menu.path}
+                end={menu.path === "/"}
+                className={({ isActive }) =>
                   isActive
-                    ? "bg-slate-800 text-white"
-                    : "text-slate-400 hover:bg-slate-800 hover:text-white"
-                )
-              }
-            >
-              <Icon size={18} />
-              {item.name}
-            </NavLink>
-          );
-        })}
+                    ? "block rounded bg-slate-700 px-3 py-2 text-white"
+                    : "block rounded px-3 py-2 text-slate-300 hover:bg-slate-800 hover:text-white"
+                }
+              >
+                {menu.name}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
       </nav>
-    </aside>
+    </div>
   );
 }
